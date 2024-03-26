@@ -8,14 +8,10 @@ function App() {
   const newCard = cardData.map((card) => {
     return (
       <Card
-        openspots={card.openSpots}
-        pic={card.coverImg}
+        // openspots={card.openSpots}
+        // pic={card.coverImg}
         key={card.id}
-        description={card.title}
-        rating={card.stats.rating}
-        review={card.stats.reviewCount}
-        location={card.location}
-        price={card.price}
+        card={card}
       />
     )
   })
@@ -23,7 +19,7 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <Hero /> */}
+      <Hero />
       <section className="flex flex-nowrap gap-5 overflow-x-auto p-10">
         {newCard}
       </section>
