@@ -1,21 +1,32 @@
 import Card from './components/Card'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
-import KatiePic from '../src/images/katie-zaferes.png'
+import KatiePic from '../public/images/katie-zaferes.png'
+import cardData from '../src/data'
 
 function App() {
+  const newCard = cardData.map((card) => {
+    return (
+      <Card
+        openspots={card.openSpots}
+        pic={card.coverImg}
+        key={card.id}
+        description={card.title}
+        rating={card.stats.rating}
+        review={card.stats.reviewCount}
+        location={card.location}
+        price={card.price}
+      />
+    )
+  })
+
   return (
     <>
       <Navbar />
       {/* <Hero /> */}
-      <Card
-        pic={KatiePic}
-        rating={5}
-        review={6}
-        country="USA"
-        description="Life lessons with Katie Zaferes"
-        price={136}
-      />
+      <section className="flex flex-nowrap gap-5 overflow-x-auto p-10">
+        {newCard}
+      </section>
     </>
   )
 }

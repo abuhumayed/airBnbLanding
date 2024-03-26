@@ -1,4 +1,4 @@
-import GridImg from '../images/photo-grid.png'
+import GridImg from '../../public/images/photo-grid.png'
 export default function Hero() {
   return (
     <div>
